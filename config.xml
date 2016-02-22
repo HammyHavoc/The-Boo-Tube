@@ -2,7 +2,7 @@
 <widget xmlns       = "http://www.w3.org/ns/widgets"
         xmlns:gap   = "http://phonegap.com/ns/1.0"
         id          = "com.thebootube"
-        versionCode = ""
+        versionCode = "1"
         version     = "1.0" >
 
 	<name>The Boo Tube</name>
@@ -17,6 +17,24 @@
 	<preference name="webviewbounce" value="false" />
 
 	<!-- Add Icon, Splash screen and any PhoneGap plugin declaration here -->
+
+	<!-- Icons -->
+	<icon src="icon.png" />
+	<icon src="./icons/48.png" gap:platform="android" gap:qualifier="ldpi" />
+	<icon src="./icons/72.png" gap:platform="android" gap:qualifier="mdpi" />
+	<icon src="./icons/96.png" gap:platform="android" gap:qualifier="hdpi" />
+	<icon src="./icons/144.png" gap:platform="android" gap:qualifier="xhdpi" />
+	<icon src="./icons/192.png" gap:platform="android" gap:qualifier="xxhdpi" />
+	<icon src="./icons/512.png" gap:platform="android" gap:qualifier="xxxhdpi" />
+	
+	<!-- Splashscreens -->
+	<gap:splash src="splash.9.png" />
+	<gap:splash src="./splashscreens/splashscreen-wp-appkit-ldpi.9.png" gap:platform="android" gap:qualifier="ldpi" />
+	<gap:splash src="./splashscreens/splashscreen-wp-appkit-mdpi.9.png" gap:platform="android" gap:qualifier="mdpi" />
+	<gap:splash src="./splashscreens/splashscreen-wp-appkit-hdpi.9.png" gap:platform="android" gap:qualifier="hdpi" />
+	<gap:splash src="./splashscreens/splashscreen-wp-appkit-xhdpi.9.png" gap:platform="android" gap:qualifier="xhdpi" />
+	<gap:splash src="./splashscreens/splashscreen-wp-appkit-xxhdpi.9.png" gap:platform="android" gap:qualifier="xxhdpi" />
+	<gap:splash src="./splashscreens/splashscreen-wp-appkit-xxxhdpi.9.png" gap:platform="android" gap:qualifier="xxxhdpi" />
 
 	<gap:plugin name="org.apache.cordova.inappbrowser" />
 	<gap:plugin name="org.apache.cordova.network-information" />

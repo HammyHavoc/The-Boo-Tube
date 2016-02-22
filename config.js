@@ -5,7 +5,7 @@ define( function ( require ) {
 	return {
 		app_slug : 'the-boo-tube-for-android',
 		wp_ws_url : 'https://www.thebootube.com/wp-appkit-api/the-boo-tube-for-android',
-		theme : 'wpak-tabs-ios',
+		theme : 'wpak-tabs-android',
 		version : '1.0',
 		app_title : 'The Boo Tube',
 		debug_mode : 'off',
