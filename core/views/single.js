@@ -5,7 +5,8 @@ define(function (require) {
     var $                   = require('jquery'),
 		_                   = require('underscore'),
         TemplateView        = require('core/views/backbone-template-view'),
-        ThemeTplTags		= require('core/theme-tpl-tags');
+        ThemeTplTags		= require('core/theme-tpl-tags'),
+		Hooks               = require('core/lib/hooks');
 
     return TemplateView.extend({
     	
@@ -26,13 +27,24 @@ define(function (require) {
         render : function() {
 			var template_args = {};
 			
-			if( this.global == 'posts' || this.global == 'pages' ){
-				template_args.post = this.item.toJSON();
-			}else{
-				template_args.item = this.item.toJSON();
-			}	
+			//Systematically set post and item because sometimes we want to 
+			//display an "item" using the post single template :
+			template_args.post = this.item.toJSON();
+			template_args.item = this.item.toJSON();
 			
 			template_args.TemplateTags = ThemeTplTags;
+			
+			/**
+			* Use this 'template-args' filter to pass custom data to your
+			* templates.
+			* 
+			* @param template_args : JSON object : the default template data to filter
+			* Params passed to the filter : 
+			* - view type : String
+			* - template name : String
+			* - view object : Backbone view object
+			*/
+			template_args = Hooks.applyFilters( 'template-args', template_args, ['single',this.template_name,this] );
 			
         	var renderedContent = this.template(template_args);
 			
