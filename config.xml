@@ -2,8 +2,8 @@
 <widget xmlns       = "http://www.w3.org/ns/widgets"
         xmlns:gap   = "http://phonegap.com/ns/1.0"
         id          = "com.thebootube"
-        versionCode = "2"
-        version     = "1.0" >
+        versionCode = "20"
+        version     = "2.0" >
 
 	<name>The Boo Tube</name>
 
@@ -12,21 +12,33 @@
 	<author href="https://www.splitanatom.com" email="hammy@splitanatom.com">Split An Atom</author>
 
 	<gap:platform name="android" />
+	<preference name="android-build-tool" value="gradle" />
+	<preference name="permissions" value="none"/>
 
 	<preference name="disallowOverscroll" value="true" />
 	<preference name="webviewbounce" value="false" />
 
 	<!-- PhoneGap plugin declaration -->
-	<gap:plugin name="cordova-plugin-inappbrowser" source="npm" />
-	<gap:plugin name="cordova-plugin-network-information" source="npm" />
-	<gap:plugin name="cordova-plugin-whitelist" source="npm" />
-	
+	<plugin name="cordova-plugin-inappbrowser" source="npm" />
+	<plugin name="cordova-plugin-network-information" source="npm" />
+	<plugin name="cordova-plugin-whitelist" source="npm" />
+	<plugin name="cordova-plugin-splashscreen" source="npm" />
+	<plugin name="cordova-plugin-device" source="npm" />
+	<plugin name="cordova-plugin-statusbar" source="npm" />
+	<plugin name="cordova-plugin-crosswalk-webview" spec="1.5.0" source="npm" />
+
 	<!-- Whitelist policy  -->
 	<access origin="*" />
 	<allow-intent href="*" />
 	<allow-navigation href="*" />
 
-	<!-- Icon and Splash screen declaration -->
+	<!-- SplashScreen configuration -->
+	<preference name="SplashScreen" value="splash" />
+	<preference name="SplashScreenDelay" value="10000" />
+	<preference name="FadeSplashScreenDuration" value="300" />
+	<preference name="ShowSplashScreenSpinner" value="false" />
+
+	<!-- Icons and Splashscreens declaration -->
 
 	<!-- Icons -->
 	<icon src="icon.png" />
